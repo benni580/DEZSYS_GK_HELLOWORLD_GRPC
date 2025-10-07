@@ -18,9 +18,9 @@ Add grpcio packages
 `pip3 install grpcio grpcio-tools`  
 
 Compile .proto file  
-`python3 -m grpc_tools.protoc -I src/main/proto \  
-  --python_out=src/main/resources \  
-  --grpc_python_out=src/main/resources \  
+`python3 -m grpc_tools.protoc -I src/main/proto  
+  --python_out=src/main/resources  
+  --grpc_python_out=src/main/resources  
   src/main/proto/hello.proto`  
 
 Start HelloWorldClient (Python)  
