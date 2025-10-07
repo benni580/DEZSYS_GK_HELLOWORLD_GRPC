@@ -1,4 +1,4 @@
-# Middleware Engineering "REST and Data Formats"
+# Middleware Engineering "DEZSYS_GK_HELLOWORLD_GRPC"
 
 ## Aufgabenstellung
 
