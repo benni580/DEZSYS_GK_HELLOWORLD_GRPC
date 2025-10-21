@@ -43,7 +43,6 @@ tasks.register('runServer', JavaExec) {
     group = 'application'
     description = 'Runs the gRPC server'
     classpath = sourceSets.main.runtimeClasspath
-    jvmArgs '--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED'
     mainClass = 'HelloWorldServer'
 }
 
@@ -52,6 +51,6 @@ tasks.register('runClient', JavaExec) {
     description = 'Runs the gRPC client'
     classpath = sourceSets.main.runtimeClasspath
     mainClass = 'HelloWorldClient'
-    // args 'Thomas' 
-    // args 'Micheler'
+     args 'Thomas' 
+     args 'Micheler'
 }
