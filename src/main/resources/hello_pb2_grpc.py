@@ -25,7 +25,7 @@ if _version_not_supported:
     )
 
 
-class HelloWorldServiceStub(object):
+class DataWarehouseServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -34,43 +34,43 @@ class HelloWorldServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.hello = channel.unary_unary(
-                '/HelloWorldService/hello',
-                request_serializer=hello__pb2.HelloRequest.SerializeToString,
-                response_deserializer=hello__pb2.HelloResponse.FromString,
+        self.getWarehouseData = channel.unary_unary(
+                '/DataWarehouseService/getWarehouseData',
+                request_serializer=hello__pb2.WarehouseRequest.SerializeToString,
+                response_deserializer=hello__pb2.WarehouseData.FromString,
                 _registered_method=True)
 
 
-class HelloWorldServiceServicer(object):
+class DataWarehouseServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def hello(self, request, context):
+    def getWarehouseData(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_HelloWorldServiceServicer_to_server(servicer, server):
+def add_DataWarehouseServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'hello': grpc.unary_unary_rpc_method_handler(
-                    servicer.hello,
-                    request_deserializer=hello__pb2.HelloRequest.FromString,
-                    response_serializer=hello__pb2.HelloResponse.SerializeToString,
+            'getWarehouseData': grpc.unary_unary_rpc_method_handler(
+                    servicer.getWarehouseData,
+                    request_deserializer=hello__pb2.WarehouseRequest.FromString,
+                    response_serializer=hello__pb2.WarehouseData.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'HelloWorldService', rpc_method_handlers)
+            'DataWarehouseService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('HelloWorldService', rpc_method_handlers)
+    server.add_registered_method_handlers('DataWarehouseService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class HelloWorldService(object):
+class DataWarehouseService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def hello(request,
+    def getWarehouseData(request,
             target,
             options=(),
             channel_credentials=None,
@@ -83,9 +83,9 @@ class HelloWorldService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/HelloWorldService/hello',
-            hello__pb2.HelloRequest.SerializeToString,
-            hello__pb2.HelloResponse.FromString,
+            '/DataWarehouseService/getWarehouseData',
+            hello__pb2.WarehouseRequest.SerializeToString,
+            hello__pb2.WarehouseData.FromString,
             options,
             channel_credentials,
             insecure,

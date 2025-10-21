@@ -24,17 +24,20 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bhello.proto\"3\n\x0cHelloRequest\x12\x11\n\tfirstname\x18\x01 \x01(\t\x12\x10\n\x08lastname\x18\x02 \x01(\t\"\x1d\n\rHelloResponse\x12\x0c\n\x04text\x18\x01 \x01(\t2=\n\x11HelloWorldService\x12(\n\x05hello\x12\r.HelloRequest\x1a\x0e.HelloResponse\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bhello.proto\"\'\n\x10WarehouseRequest\x12\x13\n\x0bwarehouseID\x18\x01 \x01(\t\"x\n\x07Product\x12\x11\n\tproductID\x18\x01 \x01(\t\x12\x13\n\x0bproductName\x18\x02 \x01(\t\x12\x17\n\x0fproductCategory\x18\x03 \x01(\t\x12\x17\n\x0fproductQuantity\x18\x04 \x01(\x05\x12\x13\n\x0bproductUnit\x18\x05 \x01(\t\"\xd5\x01\n\rWarehouseData\x12\x13\n\x0bwarehouseID\x18\x01 \x01(\t\x12\x15\n\rwarehouseName\x18\x02 \x01(\t\x12\x18\n\x10warehouseAddress\x18\x03 \x01(\t\x12\x1b\n\x13warehousePostalCode\x18\x04 \x01(\t\x12\x15\n\rwarehouseCity\x18\x05 \x01(\t\x12\x18\n\x10warehouseCountry\x18\x06 \x01(\t\x12\x11\n\ttimestamp\x18\x07 \x01(\t\x12\x1d\n\x0bproductData\x18\x08 \x03(\x0b\x32\x08.Product2O\n\x14\x44\x61taWarehouseService\x12\x37\n\x10getWarehouseData\x12\x11.WarehouseRequest\x1a\x0e.WarehouseData\"\x00\x42\x16\n\x12grpc.datawarehouseP\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'hello_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
-  DESCRIPTOR._loaded_options = None
-  _globals['_HELLOREQUEST']._serialized_start=15
-  _globals['_HELLOREQUEST']._serialized_end=66
-  _globals['_HELLORESPONSE']._serialized_start=68
-  _globals['_HELLORESPONSE']._serialized_end=97
-  _globals['_HELLOWORLDSERVICE']._serialized_start=99
-  _globals['_HELLOWORLDSERVICE']._serialized_end=160
+  _globals['DESCRIPTOR']._loaded_options = None
+  _globals['DESCRIPTOR']._serialized_options = b'\n\022grpc.datawarehouseP\001'
+  _globals['_WAREHOUSEREQUEST']._serialized_start=15
+  _globals['_WAREHOUSEREQUEST']._serialized_end=54
+  _globals['_PRODUCT']._serialized_start=56
+  _globals['_PRODUCT']._serialized_end=176
+  _globals['_WAREHOUSEDATA']._serialized_start=179
+  _globals['_WAREHOUSEDATA']._serialized_end=392
+  _globals['_DATAWAREHOUSESERVICE']._serialized_start=394
+  _globals['_DATAWAREHOUSESERVICE']._serialized_end=473
 # @@protoc_insertion_point(module_scope)

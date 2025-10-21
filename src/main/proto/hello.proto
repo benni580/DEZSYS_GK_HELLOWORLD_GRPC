@@ -1,14 +1,32 @@
 syntax = "proto3";
 
-service HelloWorldService {
-  rpc hello(HelloRequest) returns (HelloResponse) {}
+option java_package = "grpc.datawarehouse";
+option java_multiple_files = true;
+
+service DataWarehouseService {
+  rpc getWarehouseData(WarehouseRequest) returns (WarehouseData) {}
 }
 
-message HelloRequest {
-  string firstname = 1;
-  string lastname = 2;
+message WarehouseRequest {
+  string warehouseID = 1;
 }
 
-message HelloResponse {
-  string text = 1;
+message Product {
+  string productID = 1;
+  string productName = 2;
+  string productCategory = 3;
+  int32 productQuantity = 4;
+  string productUnit = 5;
+}
+
+message WarehouseData {
+  string warehouseID = 1;
+  string warehouseName = 2;
+  string warehouseAddress = 3;
+  string warehousePostalCode = 4;
+  string warehouseCity = 5;
+  string warehouseCountry = 6;
+  string timestamp = 7;
+
+  repeated Product productData = 8;
 }

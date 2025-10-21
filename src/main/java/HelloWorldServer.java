@@ -1,6 +1,5 @@
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
-
 import java.io.IOException;
 
 public class HelloWorldServer {
@@ -10,25 +9,21 @@ public class HelloWorldServer {
 
     public void start() throws IOException {
         server = ServerBuilder.forPort(PORT)
-                .addService(new HelloWorldServiceImpl())
+                .addService(new DataWarehouseServiceImpl())
                 .build()
                 .start();
     }
 
     public void blockUntilShutdown() throws InterruptedException {
-        if (server == null) {
-            return;
+        if (server != null) {
+            server.awaitTermination();
         }
-        server.awaitTermination();
     }
 
     public static void main(String[] args) throws InterruptedException, IOException {
         HelloWorldServer server = new HelloWorldServer();
-        System.out.println("\n\n");
-        System.out.println( "HelloWorld Service is running!");
-        System.out.println("\n\n");
+        System.out.println("DataWarehouse gRPC Service is running!");
         server.start();
         server.blockUntilShutdown();
     }
-
 }
